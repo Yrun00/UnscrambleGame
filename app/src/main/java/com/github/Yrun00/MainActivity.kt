@@ -1,4 +1,4 @@
-package com.github.yrun00unscramblegame
+package com.github.Yrun00
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.github.yrun00unscramblegame"
+    namespace = "com.github.Yrun00"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.github.yrun00unscramblegame"
+        applicationId = "com.github.Yrun00"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
