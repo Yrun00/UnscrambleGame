@@ -1,4 +1,4 @@
-package com.github.Yrun00
+package com.github.yrun00unscramblegame
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Assert.*
