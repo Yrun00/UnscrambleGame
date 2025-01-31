@@ -2,7 +2,6 @@ package com.github.yrun00unscramblegame
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -86,7 +85,7 @@ class ScenarioTest {
         gamePage.inputSufficientAndIncorrectWord()
         gamePage.checkCorrectNumberOfCharactersInputedState()
 
-        gamePage.deleteLetter()
+        gamePage.deleteCharacter()
         gamePage.checkIncorrectNumberOfCharactersInputedState()
 
         gamePage.clickSkip()
@@ -101,7 +100,7 @@ class ScenarioTest {
         gamePage.inputSufficientAndIncorrectWord()
         gamePage.checkCorrectNumberOfCharactersInputedState()
 
-        gamePage.deleteLetter()
+        gamePage.deleteCharacter()
         gamePage.checkIncorrectNumberOfCharactersInputedState()
 
         gamePage.inputSufficientAndIncorrectWord()
@@ -125,7 +124,7 @@ class ScenarioTest {
         gamePage.clickCheck()
         gamePage.checkErrorState()
 
-        gamePage.deleteLetter()
+        gamePage.deleteCharacter()
         gamePage.checkIncorrectNumberOfCharactersInputedState()
 
         gamePage.inputSufficientAndCorrectWord()
@@ -146,7 +145,7 @@ class ScenarioTest {
         gamePage.clickCheck()
         gamePage.checkErrorState()
 
-        gamePage.deleteLetter()
+        gamePage.deleteCharacter()
         gamePage.checkIncorrectNumberOfCharactersInputedState()
 
         gamePage.inputSufficientAndIncorrectWord()
@@ -155,7 +154,7 @@ class ScenarioTest {
         gamePage.clickCheck()
         gamePage.checkErrorState()
 
-        gamePage.deleteLetter()
+        gamePage.deleteCharacter()
         gamePage.checkIncorrectNumberOfCharactersInputedState()
 
         gamePage.inputSufficientAndCorrectWord()
