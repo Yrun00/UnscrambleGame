@@ -27,18 +27,21 @@ class GamePage(word: String) {
     )
 
     private val checkUi = ButtonUi(
+        id = R.id.checkButton,
         textResIs = R.string.check,
         colorHex = "FF9500",
         containerIdMatcher = containerIdMatcher,
         containerclassTypeMatcher = classTypeMatcher
     )
     private val nextUi = ButtonUi(
+        id = R.id.nextButton,
         textResIs = R.string.next,
         colorHex = "34C759",
         containerIdMatcher = containerIdMatcher,
         containerclassTypeMatcher = classTypeMatcher
     )
     private val skipUi = ButtonUi(
+        id = R.id.skipButton,
         textResIs = R.string.skip,
         colorHex = "007AFF",
         containerIdMatcher = containerIdMatcher,
