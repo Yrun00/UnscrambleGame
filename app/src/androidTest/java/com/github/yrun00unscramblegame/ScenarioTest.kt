@@ -9,10 +9,11 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 
+
 @RunWith(AndroidJUnit4::class)
 class ScenarioTest {
 
-    @get:Rule
+@get:Rule
     val activityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
 
     private lateinit var gamePage: GamePage
@@ -21,8 +22,7 @@ class ScenarioTest {
     fun setup() {
         gamePage = GamePage(word = "Apple".reversed())
     }
-
-
+    
     /**
      * Test case HappyPath
      */
