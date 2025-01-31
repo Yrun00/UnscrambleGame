@@ -17,35 +17,35 @@ class GamePage(word: String) {
     private val shuffledWordUi = ShuffledWordUi(
         text = word,
         containerIdMatcher = containerIdMatcher,
-        containerclassTypeMatcher = classTypeMatcher
+        containerClassTypeMatcher = classTypeMatcher
     )
 
     private val inputTextUi = InputTextUi(
         text = word,
         containerIdMatcher = containerIdMatcher,
-        containerclassTypeMatcher = classTypeMatcher
+        containerClassTypeMatcher = classTypeMatcher
     )
 
     private val checkUi = ButtonUi(
         id = R.id.checkButton,
-        textResIs = R.string.check,
+        text = R.string.check,
         colorHex = "FF9500",
         containerIdMatcher = containerIdMatcher,
-        containerclassTypeMatcher = classTypeMatcher
+        containerClassTypeMatcher = classTypeMatcher
     )
     private val nextUi = ButtonUi(
         id = R.id.nextButton,
-        textResIs = R.string.next,
+        text = R.string.next,
         colorHex = "34C759",
         containerIdMatcher = containerIdMatcher,
-        containerclassTypeMatcher = classTypeMatcher
+        containerClassTypeMatcher = classTypeMatcher
     )
     private val skipUi = ButtonUi(
         id = R.id.skipButton,
-        textResIs = R.string.skip,
+        text = R.string.skip,
         colorHex = "007AFF",
         containerIdMatcher = containerIdMatcher,
-        containerclassTypeMatcher = classTypeMatcher
+        containerClassTypeMatcher = classTypeMatcher
     )
 
 
@@ -104,16 +104,16 @@ class GamePage(word: String) {
 
 
     fun inputSufficientAndIncorrectWord() {
-        inputTextUi.inputSufficienAndIncorrect()
+        inputTextUi.inputSufficientAndIncorrect()
     }
 
 
     fun inputInsufficientWord() {
-        inputTextUi.inputInsufficien()
+        inputTextUi.inputInsufficient()
     }
 
     fun inputSufficientAndCorrectWord() {
-        inputTextUi.inputСorrect()
+        inputTextUi.inputCorrect()
     }
 
     fun deleteCharacter() {
