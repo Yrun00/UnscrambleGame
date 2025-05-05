@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">UnscrambleGame</string>
+    <string name="write_unscrambled_word">"Write unscrambled word"</string>
+    <string name="right_word">"Right word!"</string>
+    <string name="check">Check</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
 </resources>
