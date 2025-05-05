@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         val viewModel = MainViewModel()
 
         binding.inputEditText.addTextChangedListener {
-            val uiState: MainUiState = viewModel.textChanged()
+            val uiState: MainUiState = viewModel.handleUserInput(text = it.toString())
             uiState.update(binding = binding)
         }
 
