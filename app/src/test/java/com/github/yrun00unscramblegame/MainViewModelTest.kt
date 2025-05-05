@@ -20,7 +20,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("h")
+        actual = viewModel.handleUserInput("h")
         expected = MainUiState.IncorrectNumberOfCharactersInputedState(
             wordForUnscramble = "people",
             answer = "h"
@@ -28,7 +28,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAsnwer("people")
+        actual = viewModel.handleUserInput("people")
         expected = MainUiState.CorrectNumberOfCharactersInputedState(
             wordForUnscramble = "people",
             answer = "people"
@@ -36,7 +36,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.clickCheck()
+        actual = viewModel.check()
         expected = MainUiState.RightAnswerState(wordForUnscramble = "people", answer = "people")
 
         assertEquals(expected, actual)
@@ -55,12 +55,12 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.clickSkip()
+        actual = viewModel.skip()
         expected = MainUiState.noEnteredWordState(wordForUnscramble = "history")
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("q")
+        actual = viewModel.handleUserInput("q")
         expected = MainUiState.InCorrectNumberOfCharactersInputedState(
             wordForUnscramble = "history",
             answer = "q"
@@ -68,12 +68,12 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.clickSkip()
+        actual = viewModel.skip()
         expected = MainUiState.noEnteredWordState(wordForUnscramble = "way")
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("w")
+        actual = viewModel.handleUserInput("w")
         expected = MainUiState.InCorrectNumberOfCharactersInputedState(
             wordForUnscramble = "way",
             answer = "w"
@@ -81,7 +81,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("www")
+        actual = viewModel.handleUserInput("www")
         expected = MainUiState.CorrectNumberOfCharactersInputedState(
             wordForUnscramble = "way",
             answer = "www"
@@ -89,12 +89,12 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.clickSkip()
+        actual = viewModel.skip()
         expected = MainUiState.noEnteredWordState(wordForUnscramble = "art")
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("a")
+        actual = viewModel.handleUserInput("a")
         expected = MainUiState.InCorrectNumberOfCharactersInputedState(
             wordForUnscramble = "art",
             answer = "a"
@@ -102,7 +102,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("aaa")
+        actual = viewModel.handleUserInput("aaa")
         expected = MainUiState.CorrectNumberOfCharactersInputedState(
             wordForUnscramble = "art",
             answer = "aaa"
@@ -110,7 +110,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("ar")
+        actual = viewModel.handleUserInput("ar")
         expected = MainUiState.InCorrectNumberOfCharactersInputedState(
             wordForUnscramble = "art",
             answer = "aa"
@@ -118,12 +118,12 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.clickSkip()
+        actual = viewModel.skip()
         expected = MainUiState.noEnteredWordState(wordForUnscramble = "world")
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("w")
+        actual = viewModel.handleUserInput("w")
         expected = MainUiState.InCorrectNumberOfCharactersInputedState(
             wordForUnscramble = "world",
             answer = "w"
@@ -131,7 +131,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("wwwww")
+        actual = viewModel.handleUserInput("wwwww")
         expected = MainUiState.CorrectNumberOfCharactersInputedState(
             wordForUnscramble = "world",
             answer = "wwwww"
@@ -139,17 +139,17 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.clickCheck()
+        actual = viewModel.check()
         expected = MainUiState.ErrorState(wordForUnscramble = "world", answer = "wwwww")
 
         assertEquals(expected, actual)
 
-        actual = viewModel.clickSkip()
+        actual = viewModel.skip()
         expected = MainUiState.noEnteredWordState(wordForUnscramble = "map")
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("m")
+        actual = viewModel.handleUserInput("m")
         expected = MainUiState.InCorrectNumberOfCharactersInputedState(
             wordForUnscramble = "map",
             answer = "m"
@@ -157,7 +157,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("mmm")
+        actual = viewModel.handleUserInput("mmm")
         expected = MainUiState.CorrectNumberOfCharactersInputedState(
             wordForUnscramble = "map",
             answer = "mmm"
@@ -165,12 +165,12 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.clickCheck()
+        actual = viewModel.check()
         expected = MainUiState.ErrorState(wordForUnscramble = "map", answer = "mmm")
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("mm")
+        actual = viewModel.handleUserInput("mm")
         expected = MainUiState.InCorrectNumberOfCharactersInputedState(
             wordForUnscramble = "map",
             answer = "mm"
@@ -178,7 +178,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("mmm")
+        actual = viewModel.handleUserInput("mmm")
         expected = MainUiState.CorrectNumberOfCharactersInputedState(
             wordForUnscramble = "map",
             answer = "mmm"
@@ -186,12 +186,12 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.clickSkip()
+        actual = viewModel.skip()
         expected = MainUiState.noEnteredWordState(wordForUnscramble = "two")
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("t")
+        actual = viewModel.handleUserInput("t")
         expected = MainUiState.InCorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "t"
@@ -199,7 +199,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("ttt")
+        actual = viewModel.handleUserInput("ttt")
         expected = MainUiState.CorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "ttt"
@@ -207,7 +207,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.clickCheck()
+        actual = viewModel.check()
         expected = MainUiState.ErrorState(
             wordForUnscramble = "two",
             answer = "ttt"
@@ -215,7 +215,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("tt")
+        actual = viewModel.handleUserInput("tt")
         expected = MainUiState.InCorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "tt"
@@ -223,7 +223,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("ttt")
+        actual = viewModel.handleUserInput("ttt")
         expected = MainUiState.CorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "ttt"
@@ -231,7 +231,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.clickCheck()
+        actual = viewModel.check()
         expected = MainUiState.ErrorState(
             wordForUnscramble = "two",
             answer = "ttt"
@@ -240,7 +240,7 @@ class MainViewModelTest {
         assertEquals(expected, actual)
 
 
-        actual = viewModel.inputAnswer("tt")
+        actual = viewModel.handleUserInput("tt")
         expected = MainUiState.InCorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "tt"
@@ -248,7 +248,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("ttt")
+        actual = viewModel.handleUserInput("ttt")
         expected = MainUiState.CorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "ttt"
@@ -256,7 +256,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.clickCheck()
+        actual = viewModel.check()
         expected = MainUiState.ErrorState(
             wordForUnscramble = "two",
             answer = "ttt"
@@ -264,7 +264,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("tt")
+        actual = viewModel.handleUserInput("tt")
         expected = MainUiState.InCorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "tt"
@@ -272,7 +272,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.inputAnswer("two")
+        actual = viewModel.handleUserInput("two")
         expected = MainUiState.CorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "two"
@@ -280,7 +280,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.clickCheck()
+        actual = viewModel.check()
         expected = MainUiState.RightAnswerState(
             wordForUnscramble = "two",
             answer = "two"
@@ -288,7 +288,7 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.clickNext()
+        actual = viewModel.next()
         expected = MainUiState.noEnteredWordState(wordForUnscramble = "family")
 
         assertEquals(expected, actual)
