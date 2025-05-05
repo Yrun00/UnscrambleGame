@@ -319,6 +319,42 @@ class MainViewModelTest {
     }
 }
 
+private class FakeRepository : Repository {
+
+    private val listOfWords = listOf(
+        "people",
+        "history",
+        "way",
+        "art",
+        "world",
+        "map",
+        "two",
+        "family",
+    )
+
+    private var index = 0
+
+    override fun wordForUnscrumble(): String {
+        return listOfWords[index]
+    }
+
+    override fun check(userInput: String): Boolean {
+
+        return listOfWords[index].equals(userInput, ignoreCase = true)
+
+    }
+
+    override fun next() {
+        index++
+        if (index == listOfWords.size)
+            index = 0
+    }
+
+    override fun skip() {
+        next()
+    }
+}
+
 
 //List of words
 //people
