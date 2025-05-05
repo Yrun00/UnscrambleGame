@@ -223,6 +223,14 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
+        actual = viewModel.handleUserInput("tttt")
+        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+            wordForUnscramble = "two",
+            answer = "tttt"
+        )
+
+        assertEquals(expected, actual)
+
         actual = viewModel.handleUserInput("ttt")
         expected = MainUiState.CorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
@@ -248,6 +256,14 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
+        actual = viewModel.handleUserInput("tttt")
+        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+            wordForUnscramble = "two",
+            answer = "tttt"
+        )
+
+        assertEquals(expected, actual)
+
         actual = viewModel.handleUserInput("ttt")
         expected = MainUiState.CorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
@@ -268,6 +284,14 @@ class MainViewModelTest {
         expected = MainUiState.InCorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "tt"
+        )
+
+        assertEquals(expected, actual)
+
+        actual = viewModel.handleUserInput("tttt")
+        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+            wordForUnscramble = "two",
+            answer = "tttt"
         )
 
         assertEquals(expected, actual)
