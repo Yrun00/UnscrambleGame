@@ -12,14 +12,16 @@ class MainViewModel(val repository: Repository) {
 
     fun handleUserInput(userInput: String): MainUiState {
         this.userInput = userInput
-        return if (this.userInput.length == word.length) {
+        val correctNumberOfCharactersInputed: Boolean = this.userInput.length == word.length
+        return if (correctNumberOfCharactersInputed) {
             MainUiState.CorrectNumberOfCharactersInputedState(word, this.userInput)
         } else MainUiState.IncorrectNumberOfCharactersInputedState(word, this.userInput)
 
     }
 
     fun check(): MainUiState {
-        return if (repository.check(userInput)) {
+        val isCorrect = repository.check(userInput)
+        return if (isCorrect) {
             MainUiState.RightAnswerState(word, userInput)
         } else MainUiState.ErrorState(word, userInput)
     }
