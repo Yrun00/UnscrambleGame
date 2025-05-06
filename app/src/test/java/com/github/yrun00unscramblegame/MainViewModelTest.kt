@@ -16,7 +16,7 @@ class MainViewModelTest {
     @Test
     fun caseNumber1() {
         var actual: MainUiState = viewModel.init()
-        var expected: MainUiState = MainUiState.noEnteredWordState(wordForUnscramble = "people")
+        var expected: MainUiState = MainUiState.NoEnteredWordState(wordForUnscramble = "people")
 
         assertEquals(expected, actual)
 
@@ -41,8 +41,8 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.clickNext()
-        expected = MainUiState.noEnteredWordState(wordForUnscramble = "history")
+        actual = viewModel.next()
+        expected = MainUiState.NoEnteredWordState(wordForUnscramble = "history")
 
         assertEquals(expected, actual)
     }
@@ -51,17 +51,17 @@ class MainViewModelTest {
     fun caseNumber2() {
 
         var actual: MainUiState = viewModel.init()
-        var expected: MainUiState = MainUiState.noEnteredWordState(wordForUnscramble = "people")
+        var expected: MainUiState = MainUiState.NoEnteredWordState(wordForUnscramble = "people")
 
         assertEquals(expected, actual)
 
         actual = viewModel.skip()
-        expected = MainUiState.noEnteredWordState(wordForUnscramble = "history")
+        expected = MainUiState.NoEnteredWordState(wordForUnscramble = "history")
 
         assertEquals(expected, actual)
 
         actual = viewModel.handleUserInput("q")
-        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+        expected = MainUiState.IncorrectNumberOfCharactersInputedState(
             wordForUnscramble = "history",
             answer = "q"
         )
@@ -69,12 +69,12 @@ class MainViewModelTest {
         assertEquals(expected, actual)
 
         actual = viewModel.skip()
-        expected = MainUiState.noEnteredWordState(wordForUnscramble = "way")
+        expected = MainUiState.NoEnteredWordState(wordForUnscramble = "way")
 
         assertEquals(expected, actual)
 
         actual = viewModel.handleUserInput("w")
-        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+        expected = MainUiState.IncorrectNumberOfCharactersInputedState(
             wordForUnscramble = "way",
             answer = "w"
         )
@@ -90,12 +90,12 @@ class MainViewModelTest {
         assertEquals(expected, actual)
 
         actual = viewModel.skip()
-        expected = MainUiState.noEnteredWordState(wordForUnscramble = "art")
+        expected = MainUiState.NoEnteredWordState(wordForUnscramble = "art")
 
         assertEquals(expected, actual)
 
         actual = viewModel.handleUserInput("a")
-        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+        expected = MainUiState.IncorrectNumberOfCharactersInputedState(
             wordForUnscramble = "art",
             answer = "a"
         )
@@ -110,8 +110,8 @@ class MainViewModelTest {
 
         assertEquals(expected, actual)
 
-        actual = viewModel.handleUserInput("ar")
-        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+        actual = viewModel.handleUserInput("aa")
+        expected = MainUiState.IncorrectNumberOfCharactersInputedState(
             wordForUnscramble = "art",
             answer = "aa"
         )
@@ -119,12 +119,12 @@ class MainViewModelTest {
         assertEquals(expected, actual)
 
         actual = viewModel.skip()
-        expected = MainUiState.noEnteredWordState(wordForUnscramble = "world")
+        expected = MainUiState.NoEnteredWordState(wordForUnscramble = "world")
 
         assertEquals(expected, actual)
 
         actual = viewModel.handleUserInput("w")
-        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+        expected = MainUiState.IncorrectNumberOfCharactersInputedState(
             wordForUnscramble = "world",
             answer = "w"
         )
@@ -145,12 +145,12 @@ class MainViewModelTest {
         assertEquals(expected, actual)
 
         actual = viewModel.skip()
-        expected = MainUiState.noEnteredWordState(wordForUnscramble = "map")
+        expected = MainUiState.NoEnteredWordState(wordForUnscramble = "map")
 
         assertEquals(expected, actual)
 
         actual = viewModel.handleUserInput("m")
-        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+        expected = MainUiState.IncorrectNumberOfCharactersInputedState(
             wordForUnscramble = "map",
             answer = "m"
         )
@@ -171,7 +171,7 @@ class MainViewModelTest {
         assertEquals(expected, actual)
 
         actual = viewModel.handleUserInput("mm")
-        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+        expected = MainUiState.IncorrectNumberOfCharactersInputedState(
             wordForUnscramble = "map",
             answer = "mm"
         )
@@ -187,12 +187,12 @@ class MainViewModelTest {
         assertEquals(expected, actual)
 
         actual = viewModel.skip()
-        expected = MainUiState.noEnteredWordState(wordForUnscramble = "two")
+        expected = MainUiState.NoEnteredWordState(wordForUnscramble = "two")
 
         assertEquals(expected, actual)
 
         actual = viewModel.handleUserInput("t")
-        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+        expected = MainUiState.IncorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "t"
         )
@@ -216,7 +216,7 @@ class MainViewModelTest {
         assertEquals(expected, actual)
 
         actual = viewModel.handleUserInput("tt")
-        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+        expected = MainUiState.IncorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "tt"
         )
@@ -224,7 +224,7 @@ class MainViewModelTest {
         assertEquals(expected, actual)
 
         actual = viewModel.handleUserInput("tttt")
-        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+        expected = MainUiState.IncorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "tttt"
         )
@@ -249,7 +249,7 @@ class MainViewModelTest {
 
 
         actual = viewModel.handleUserInput("tt")
-        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+        expected = MainUiState.IncorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "tt"
         )
@@ -257,7 +257,7 @@ class MainViewModelTest {
         assertEquals(expected, actual)
 
         actual = viewModel.handleUserInput("tttt")
-        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+        expected = MainUiState.IncorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "tttt"
         )
@@ -281,7 +281,7 @@ class MainViewModelTest {
         assertEquals(expected, actual)
 
         actual = viewModel.handleUserInput("tt")
-        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+        expected = MainUiState.IncorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "tt"
         )
@@ -289,7 +289,7 @@ class MainViewModelTest {
         assertEquals(expected, actual)
 
         actual = viewModel.handleUserInput("tttt")
-        expected = MainUiState.InCorrectNumberOfCharactersInputedState(
+        expected = MainUiState.IncorrectNumberOfCharactersInputedState(
             wordForUnscramble = "two",
             answer = "tttt"
         )
@@ -313,7 +313,7 @@ class MainViewModelTest {
         assertEquals(expected, actual)
 
         actual = viewModel.next()
-        expected = MainUiState.noEnteredWordState(wordForUnscramble = "family")
+        expected = MainUiState.NoEnteredWordState(wordForUnscramble = "family")
 
         assertEquals(expected, actual)
     }
@@ -334,7 +334,7 @@ private class FakeRepository : Repository {
 
     private var index = 0
 
-    override fun wordForUnscrumble(): String {
+    override fun wordForUnscramble(): String {
         return listOfWords[index]
     }
 
@@ -348,10 +348,6 @@ private class FakeRepository : Repository {
         index++
         if (index == listOfWords.size)
             index = 0
-    }
-
-    override fun skip() {
-        next()
     }
 }
 
