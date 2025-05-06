@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.addTextChangedListener
-import androidx.lifecycle.ViewModel
 import com.github.yrun00unscramblegame.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,25 +20,25 @@ class MainActivity : AppCompatActivity() {
         val binding: ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val viewModel = MainViewModel()
+        val viewModel = MainViewModel(Repository.Base())
 
         binding.inputEditText.addTextChangedListener {
-            val uiState: MainUiState = viewModel.handleUserInput(text = it.toString())
+            val uiState: MainUiState = viewModel.handleUserInput(userInput = it.toString())
             uiState.update(binding = binding)
         }
 
         binding.checkButton.setOnClickListener {
-            val uiState: MainUiState = ViewModel.check
+            val uiState: MainUiState = viewModel.check()
             uiState.update(binding = binding)
         }
 
         binding.nextButton.setOnClickListener {
-            val uiState: MainUiState = ViewModel.next
+            val uiState: MainUiState = viewModel.next()
             uiState.update(binding = binding)
         }
 
         binding.skipButton.setOnClickListener {
-            val uiState: MainUiState = ViewModel.skip
+            val uiState: MainUiState = viewModel.skip()
             uiState.update(binding = binding)
         }
     }
