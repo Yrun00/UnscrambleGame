@@ -10,15 +10,31 @@ interface Repository {
 
     class Base() : Repository {
         override fun wordForUnscramble(): String {
-            TODO("Not yet implemented")
+            return listOfWords[index]
         }
 
         override fun check(userInput: String): Boolean {
-            TODO("Not yet implemented")
+            return listOfWords[index].equals(userInput, ignoreCase = true)
         }
 
         override fun next() {
-            TODO("Not yet implemented")
+            index++
         }
+
+        private var index = 0
+
+        private val listOfWords = listOf(
+            "people",
+            "history",
+            "way",
+            "art",
+            "world",
+            "map",
+            "two",
+            "family"
+        )
+
     }
+
+
 }
