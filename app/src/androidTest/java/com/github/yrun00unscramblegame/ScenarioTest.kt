@@ -83,7 +83,7 @@ class ScenarioTest {
 
         gamePage.clickSkip()
         gamePage = GamePage(
-            word = "Carrot".reversed()
+            word = "Penguin".reversed()
         )
         gamePage.checkNoEnteredWordState()
 
