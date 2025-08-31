@@ -120,4 +120,8 @@ class GamePage(word: String) {
         inputTextUi.deleteCharacter()
     }
 
+    fun inputExcessiveWord() {
+        inputTextUi.inputExcessive()
+    }
+
 }

@@ -33,8 +33,10 @@ class ScenarioTest {
         gamePage.inputInsufficientWord()
         gamePage.checkIncorrectNumberOfCharactersInputedState()
 
-        gamePage.inputSufficientAndCorrectWord()
+        gamePage.inputExcessiveWord()
+        gamePage.checkIncorrectNumberOfCharactersInputedState()
 
+        gamePage.inputSufficientAndCorrectWord()
         gamePage.checkCorrectNumberOfCharactersInputedState()
 
         gamePage.clickCheck()
@@ -61,6 +63,9 @@ class ScenarioTest {
         gamePage.inputInsufficientWord()
         gamePage.checkIncorrectNumberOfCharactersInputedState()
 
+        gamePage.inputExcessiveWord()
+        gamePage.checkIncorrectNumberOfCharactersInputedState()
+
         gamePage.clickSkip()
         gamePage = GamePage(
             word = "Carrot".reversed()
@@ -68,6 +73,9 @@ class ScenarioTest {
         gamePage.checkNoEnteredWordState()
 
         gamePage.inputInsufficientWord()
+        gamePage.checkIncorrectNumberOfCharactersInputedState()
+
+        gamePage.inputExcessiveWord()
         gamePage.checkIncorrectNumberOfCharactersInputedState()
 
         gamePage.inputSufficientAndIncorrectWord()
@@ -97,6 +105,9 @@ class ScenarioTest {
         gamePage.inputInsufficientWord()
         gamePage.checkIncorrectNumberOfCharactersInputedState()
 
+        gamePage.inputExcessiveWord()
+        gamePage.checkIncorrectNumberOfCharactersInputedState()
+
         gamePage.inputSufficientAndIncorrectWord()
         gamePage.checkCorrectNumberOfCharactersInputedState()
 
@@ -118,6 +129,9 @@ class ScenarioTest {
         gamePage.inputInsufficientWord()
         gamePage.checkIncorrectNumberOfCharactersInputedState()
 
+        gamePage.inputExcessiveWord()
+        gamePage.checkIncorrectNumberOfCharactersInputedState()
+
         gamePage.inputSufficientAndIncorrectWord()
         gamePage.checkCorrectNumberOfCharactersInputedState()
 
@@ -137,6 +151,9 @@ class ScenarioTest {
         gamePage.checkNoEnteredWordState()
 
         gamePage.inputInsufficientWord()
+        gamePage.checkIncorrectNumberOfCharactersInputedState()
+
+        gamePage.inputExcessiveWord()
         gamePage.checkIncorrectNumberOfCharactersInputedState()
 
         gamePage.inputSufficientAndIncorrectWord()
