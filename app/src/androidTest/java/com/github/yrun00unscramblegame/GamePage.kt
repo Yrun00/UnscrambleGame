@@ -9,13 +9,14 @@ import org.hamcrest.Matcher
 
 class GamePage(word: String) {
 
+
     private val containerIdMatcher: Matcher<View> = withParent(withId(R.id.rootLayout))
 
     private val classTypeMatcher: Matcher<View> =
         withParent(isAssignableFrom(LinearLayout::class.java))
 
     private val shuffledWordUi = ShuffledWordUi(
-        text = word,
+        text = word.reversed(),
         containerIdMatcher = containerIdMatcher,
         containerClassTypeMatcher = classTypeMatcher
     )
@@ -28,21 +29,21 @@ class GamePage(word: String) {
 
     private val checkUi = ButtonUi(
         id = R.id.checkButton,
-        text = R.string.check.toString(),
+        text = "Check",
         colorHex = "#FF9500",
         containerIdMatcher = containerIdMatcher,
         containerClassTypeMatcher = classTypeMatcher
     )
     private val nextUi = ButtonUi(
         id = R.id.nextButton,
-        text = R.string.next.toString(),
+        text = "Next",
         colorHex = "#34C759",
         containerIdMatcher = containerIdMatcher,
         containerClassTypeMatcher = classTypeMatcher
     )
     private val skipUi = ButtonUi(
         id = R.id.skipButton,
-        text = R.string.skip.toString(),
+        text = "Skip",
         colorHex = "#007AFF",
         containerIdMatcher = containerIdMatcher,
         containerClassTypeMatcher = classTypeMatcher
@@ -99,7 +100,7 @@ class GamePage(word: String) {
         inputTextUi.assertStateRight()
         checkUi.assertNotVisible()
         nextUi.assertEnabled()
-        skipUi.assertDisabled()
+        skipUi.assertNotVisible()
     }
 
 

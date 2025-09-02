@@ -27,6 +27,7 @@ interface Repository {
             "Apple",
             "Banana",
             "Carrot",
+            "Penguin",
             "Elephant",
             "Flower",
             "Garden",

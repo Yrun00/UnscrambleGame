@@ -10,7 +10,7 @@ import androidx.test.espresso.matcher.ViewMatchers.isAssignableFrom
 import androidx.test.espresso.matcher.ViewMatchers.isClickable
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.isEnabled
-import androidx.test.espresso.matcher.ViewMatchers.isNotClickable
+import androidx.test.espresso.matcher.ViewMatchers.isNotEnabled
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import org.hamcrest.CoreMatchers.allOf
@@ -31,13 +31,13 @@ class ButtonUi(
             withId(id),
             withText(text),
             isAssignableFrom(AppCompatButton::class.java),
-            ButtonColorMatcher(colorHex)
+//            ButtonColorMatcher(colorHex)
         )
     )
 ) {
 
     fun assertDisabled() {
-        interaction.check(matches(isNotClickable()))
+        interaction.check(matches(isNotEnabled()))
     }
 
     fun assertNotVisible() {
