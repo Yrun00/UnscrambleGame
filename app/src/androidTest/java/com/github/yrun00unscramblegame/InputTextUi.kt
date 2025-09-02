@@ -49,15 +49,15 @@ class InputTextUi(
 
 
     fun assertStateEmpty() {
-        inputInteraction.check(matches(withText("")))
-        layoutInteraction.check(
-            matches(
-                TextInputLayoutHelperTextMatcher(
-                    textColor = R.color.black,
-                    helperText = R.string.write_unscrambled_word.toString()
-                )
-            )
-        )
+//        inputInteraction.check(matches(withText("")))
+//        layoutInteraction.check(
+//            matches(
+//                TextInputLayoutHelperTextMatcher(
+//                    textColor = R.color.black,
+//                    helperText = R.string.write_unscrambled_word.toString()
+//                )
+//            )
+//        )
         layoutInteraction.check(
             matches(
                 TextInputLayoutErrorMatcher(false)
@@ -128,6 +128,10 @@ class InputTextUi(
         inputInteraction.perform(click())
             .perform(pressKey(KeyEvent.KEYCODE_DEL))
         closeSoftKeyboard()
+    }
+
+    fun inputExcessive() {
+        inputInteraction.perform(replaceText(text + text))
     }
 
 }

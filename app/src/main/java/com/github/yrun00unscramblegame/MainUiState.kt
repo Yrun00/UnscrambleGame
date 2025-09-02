@@ -14,7 +14,7 @@ interface MainUiState {
         private val wordForUnscramble: String,
         private val inputUiState: InputUiState,
         private val checkButtonUiState: CheckButtonUiState,
-        private val nextButtonVisibility: Int = View.GONE,
+        private val nextButtonVisibility: Int = View.INVISIBLE,
         private val skipButtonVisibility: Int = View.VISIBLE,
     ) : MainUiState {
 
@@ -50,7 +50,7 @@ interface MainUiState {
         Abstract(
             wordForUnscramble,
             InputUiState.WordEnteredState(answer),
-            CheckButtonUiState.Disabled,
+            CheckButtonUiState.Invisible,
             nextButtonVisibility = View.VISIBLE,
             skipButtonVisibility = View.INVISIBLE
         )
@@ -128,7 +128,7 @@ interface CheckButtonUiState {
     ) : CheckButtonUiState {
         override fun update(checkButton: Button) = with(checkButton) {
             visibility = visible
-            isClickable = enabled
+            isEnabled = enabled
         }
     }
 
