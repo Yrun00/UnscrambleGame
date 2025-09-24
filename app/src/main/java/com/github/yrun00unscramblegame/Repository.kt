@@ -10,7 +10,7 @@ interface Repository {
 
     class Base() : Repository {
         override fun wordForUnscramble(): String {
-            return listOfWords[index]
+            return listOfWords[index].reversed()
         }
 
         override fun check(userInput: String): Boolean {
@@ -24,14 +24,36 @@ interface Repository {
         private var index = 0
 
         private val listOfWords = listOf(
-            "people",
-            "history",
-            "way",
-            "art",
-            "world",
-            "map",
-            "two",
-            "family"
+            "Apple",
+            "Banana",
+            "Carrot",
+            "Penguin",
+            "Elephant",
+            "Flower",
+            "Garden",
+            "House",
+            "Ice",
+            "Juice",
+            "Kite",
+            "Lemon",
+            "Monkey",
+            "Nes",
+            "Orange",
+            "Penguin",
+            "Queen",
+            "Rabbit",
+            "Sun",
+            "Tree",
+            "Umbrella",
+            "Violet",
+            "Water",
+            "Xylophone",
+            "Yellow",
+            "Zebra",
+            "Airplane",
+            "Ball",
+            "Cat",
+            "Door"
         )
 
     }

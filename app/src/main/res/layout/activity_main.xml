@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -30,7 +31,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:helperText="@string/write_unscrambled_word">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputEditText"
@@ -40,26 +42,45 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="260dp" />
+        android:layout_height="100dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/checkButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/check" />
+        android:layout_gravity="top"
+        android:layout_weight="1"
+        android:backgroundTint="@color/orange"
+        android:text="@string/check"
+
+
+        />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/next" />
+        android:layout_weight="1"
+        android:backgroundTint="@color/green"
+        android:text="@string/next"
+
+        />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/skipButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:text="@string/skip" />
+        android:layout_weight="1"
+        android:backgroundTint="@color/blue"
+        android:text="@string/skip"
 
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_weight="500" />
 
 </LinearLayout>

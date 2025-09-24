@@ -19,7 +19,7 @@ class ScenarioTest {
 
     @Before
     fun setup() {
-        gamePage = GamePage(word = "Apple".reversed())
+        gamePage = GamePage(word = "Apple")
     }
     
     /**
@@ -45,7 +45,7 @@ class ScenarioTest {
         gamePage.clickNext()
 
         gamePage = GamePage(
-            word = "Banana".reversed()
+            word = "Banana"
         )
         gamePage.checkNoEnteredWordState()
     }
@@ -56,7 +56,7 @@ class ScenarioTest {
 
         gamePage.clickSkip()
         gamePage = GamePage(
-            word = "Banana".reversed()
+            word = "Banana"
         )
         gamePage.checkNoEnteredWordState()
 
@@ -68,7 +68,7 @@ class ScenarioTest {
 
         gamePage.clickSkip()
         gamePage = GamePage(
-            word = "Carrot".reversed()
+            word = "Carrot"
         )
         gamePage.checkNoEnteredWordState()
 
@@ -83,11 +83,11 @@ class ScenarioTest {
 
         gamePage.clickSkip()
         gamePage = GamePage(
-            word = "Penguin".reversed()
+            word = "Penguin"
         )
         gamePage.checkNoEnteredWordState()
 
-        gamePage.inputSufficientAndIncorrectWord()
+        gamePage.inputInsufficientWord()
         gamePage.checkIncorrectNumberOfCharactersInputedState()
 
         gamePage.inputSufficientAndIncorrectWord()
@@ -98,7 +98,7 @@ class ScenarioTest {
 
         gamePage.clickSkip()
         gamePage = GamePage(
-            word = "Elephant".reversed()
+            word = "Elephant"
         )
         gamePage.checkNoEnteredWordState()
 
@@ -122,7 +122,7 @@ class ScenarioTest {
 
         gamePage.clickSkip()
         gamePage = GamePage(
-            word = "Flower".reversed()
+            word = "Flower"
         )
         gamePage.checkNoEnteredWordState()
 
@@ -146,7 +146,7 @@ class ScenarioTest {
 
         gamePage.clickSkip()
         gamePage = GamePage(
-            word = "Garden".reversed()
+            word = "Garden"
         )
         gamePage.checkNoEnteredWordState()
 
@@ -182,7 +182,7 @@ class ScenarioTest {
 
         gamePage.clickNext()
         gamePage = GamePage(
-            word = "House".reversed()
+            word = "House"
         )
         gamePage.checkNoEnteredWordState()
     }
